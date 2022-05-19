@@ -1,5 +1,7 @@
 CODE_CHANGES = getGitChanges()
 
+def gv
+
 pipeline {
   agent any 
   
@@ -22,6 +24,41 @@ pipeline {
   }
   
   stages {
+    
+    
+    stage ("init") {
+      steps {
+        script {
+          gv = load "script.groovy"
+        }
+      }
+    }
+    
+    stage("build1"){
+      steps {
+        script {
+          gv.buildApp()
+        }
+      }
+    }
+    
+    stage("test1"){
+      steps {
+        script {
+          gv.buildApp()
+        }
+      }
+    }
+    
+    stage("deploy1"){
+      steps {
+        script {
+          gv.buildApp()
+        }
+      }
+    }
+    
+    
   
     stage("build") {
       
